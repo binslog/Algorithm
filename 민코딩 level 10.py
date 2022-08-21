@@ -122,34 +122,34 @@
 #------------------------------------------------------------------------
 
 #6
+a,b = map(int,input().split())
+c = a/b
+if c % 2 == 0 :
+    even(c)
+else:
+    odd(c)
 
-# def main():
-#     a,b = map(int,input().split())
-#     c = a/b
-#     if c % 2 == 0 :
-#         return even(c)
-#     else:
-#         return even(c)
-#
-#
-#     return printData(a+b)
-#
-# main= main()
-#
-# def even(c):
-#       even_data = c * 2
-#     return printData(even_data)
-#
-# even = even(c)
-# def odd(c)
-#     odd_data = c - 10
-#     return printData(odd_data)
-#
-# odd = odd(c)
-# def printData(main,even,odd):
-#     print(main,even,odd)
-#
-# printData(main,even,odd)
+    printData(a+b)
+
+    return c
+
+c = main()
+
+def even(c):
+      evendata = c * 2
+
+      printData(even_data)
+
+even = even(c)
+def odd(c)
+    odd_data = c - 10
+    return printData(odd_data)
+
+odd = odd(c)
+def printData(main,even,odd):
+    print(main,even,odd)
+
+printData(main,even,odd)
 
 #-----------------------------------------------------------------------
 #7
@@ -184,26 +184,14 @@
 #----------------------------------------------------------------------------------
 #8
 
-
-# def main():
-#     stone = int(input())
-#     pingpong(stone)
-#     return stone
-#
-# stone=main()
-#
-# def pingpong(stone):
-#     tong = stone + 10
-#     main(tong)
+# def pingpong(tong):
+#     tong = tong + 10
 #     return tong
 #
-# tong = pingpong(stone)
-# def output(tong):
-#     ret = tong
-#     print(ret)
 #
-# output(tong)
-
+# stone = int(input())
+# ret=pingpong(stone)
+# print(ret)
 #-------------------------------------------------------------------
 #9
 # arr = [[0 for j in range (4)] for i in range(4)]
@@ -269,17 +257,18 @@
 #--------------------------------------------------------
 #12
 
-def input_func():
-    num = int(input())
-    return num
+# def input_func():
+#     num = int(input())
+#     return num
+#
+# num = input_func()
+#
+# def countdown_func(num):
+#     for i in range(num,0,-1):
+#         print(i,end=' ')
+#
+# countdown_func(num)
 
-num = input_func()
-
-def countdown_func(num):
-    for i in range(num,0,-1):
-        print(i,end=' ')
-
-countdown_func(num)
 
 
 
