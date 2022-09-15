@@ -91,15 +91,57 @@
 #
 #     print(f'#{tc} {Max-Min}')
 
+#------------------------------------------------------------
+# gravity
+# T = int(input())
+# for tc in range(T+1):
+#     N = int(input())
+#     arr = list(map(int,input().split()))
+#     Max = 0
+#     for i in range(len(arr)-1):
+#         cnt = 0
+#         for j in range(i+1,len(arr)):
+#             if arr[i] > arr[j]:
+#                 cnt += 1
+#         if cnt > Max:
+#             Max = cnt
+#     print(f"#{tc} {Max}")
+#
 
 
+#---------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
+# 전기버스
+# T = int(input())
+#
+# K,N,M = map(int,(input().split()))
+# arr = list(map(int,input().split()))
+#
+# bucket=[0]*101
+# for i in range(M):
+#     bucket[arr[i]] = 1
+#
+# idx = 0
+# cnt = 0
+# flag = 0
+#
+# while cnt <= N:
+#     for i in range(K,0,-1):
+#         if bucket[idx+i] ==1:
+#             idx += i
+#             cnt += 1
+#         else:
+#             K -= 1
+#         if idx >= N-K:
+#             flag =1
+#             break
+#         if K ==0:
+#             flag=1
+#             cnt=0
+#             break
+#     if flag:
+#         break
+#
+# print(f'{cnt}')
+#
 

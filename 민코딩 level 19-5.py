@@ -35,12 +35,14 @@
 
 #----------------------------------------------------------------------------
 #3
-# numbers = list(map(int,input().split()))
+# nums = list(map(int,input().split()))
 # arr = [[0,0,0,0], [0,0,0,0], [0,0,0,0], [0,0,0,0]]
 #
-# for i in range(len(numbers)):
-#     y = int(numbers[i] / 4)
-#     x = (numbers[i] % 4)-1
+# for i in range(len(nums)):
+#     y = nums[i]//4
+#     if nums[i] % 4 == 0:
+#         y -=1
+#     x = nums[i]%4 -1
 #     idx = i
 #     arr[y][x] = i+1
 #
@@ -94,34 +96,29 @@
 
 #--------------------------------------------------------------------------------
 #7
-# arr=[[3,5,1],[3,8,1],[1,1,5]]
-# bit_arr = [list(map(int,input().split())) for _ in range(2)]
-#
-#
-# def ispattern(y,x):
-#     Sum = 0
-#     resulty=0
-#     resultx=0
-#     Max = -1
-#     for i in range(2):
-#         for j in range(2):
-#             dy = y+i
-#             dx = x+j
-#             if bit_arr[i][j] == 1:
-#                 Sum += arr[dy][dx]
-#                 if Sum > Max :
-#                     Max = Sum
-#                     resulty = dy
-#                     resultx = dx
-#
-#         return dy,dx
-#
-#
-# for i in range(2):
-#     for j in range(3):
-#         ret = ispattern(i,j)
-#
-# print(ret)
+arr=[[3,5,1],[3,8,1],[1,1,5]]
+bit_arr = [list(map(int,input().split())) for _ in range(2)]
+
+def ispattern(y,x):
+    Sum = 0
+    for i in range(2):
+        for j in range(2):
+            if bit_arr[i][j] == 1:
+                dy = y+i
+                dx = x+j
+                Sum += arr[dy][dx]
+    return Sum
+
+Max = -1
+for i in range(2):
+    for j in range(2):
+        ret = ispattern(i,j)
+        if ret > Max:
+            Max = ret
+            y=i
+            x=j
+
+print("(%d,%d)"% (y,x))
 
 
 
