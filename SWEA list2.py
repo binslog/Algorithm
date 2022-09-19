@@ -57,44 +57,45 @@
 
 #------------------------------------------------------
 
-# T=int(input())
-# for tc in range(1,T+1):
-#     # 이진탐색
-#     end,targetA,targetB=map(int,(input().split()))
-#     endA=end
-#     startA=0
-#     cntA=0
-#
-#     # A 이진탐색
-#     while startA<=endA:
-#         mid=(startA+endA)//2
-#         cntA += 1
-#         if mid == targetA:
-#             break
-#         elif mid < targetA:
-#             startA=mid
-#         else:
-#             endA=mid
-#
-#     endB=end
-#     startB=0
-#     cntB=0
-#     while startB<=endB:
-#         mid=(startB+endB)//2
-#         cntB += 1
-#         if mid == targetB:
-#             break
-#         elif mid < targetB:
-#             startB=mid
-#         else:
-#             endB=mid
-#
-#     if cntA>cntB:
-#         print(f'#{tc} B')
-#     elif cntA<cntB:
-#         print(f'#{tc} A')
-#     else:
-#         print(f'#{tc} 0')
+T=int(input())
+for tc in range(1,T+1):
+    # 이진탐색
+    end,targetA,targetB=map(int,(input().split()))
+    endA=end
+    startA=0
+    cntA=0
+
+    # A 이진탐색
+    while startA<=endA:
+        mid=(startA+endA)//2
+        cntA += 1
+        if mid == targetA:
+            break
+        elif mid < targetA:
+            startA=mid
+        else:
+            endA=mid
+
+    # B 이진탐색
+    endB=end
+    startB=0
+    cntB=0
+    while startB<=endB:
+        mid=(startB+endB)//2
+        cntB += 1
+        if mid == targetB:
+            break
+        elif mid < targetB:
+            startB=mid
+        else:
+            endB=mid
+
+    if cntA>cntB:
+        print(f'#{tc} B')
+    elif cntA<cntB:
+        print(f'#{tc} A')
+    else:
+        print(f'#{tc} 0')
 
 #------------------------------------------------------------
 # 색칠하기
