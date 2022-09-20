@@ -15,36 +15,27 @@
 # -------------------------------------------
 # 13741 글자수
 
-T=int(input())
-
-for tc in range(1,T+1):
-    str1,str2 = list(input()),list(input())
-    bucket = [0]*101
-    max_idx=0
-    cnt=0
-
-    for i in range(len(str1)):
-        bucket[ord(str1[i])] += 1
-
-    for i in range(101):
-        if max(bucket)==bucket[i]:
-            max_idx=i
-            cnt+=1
-
-    result=0
-    for i in range(len(str2)):
-        if max_idx == ord(str2[i]):
-            result+=1
-
-
-    print(f'#{tc} {result}')
-
-
-
+# T=int(input())
+#
+# for tc in range(1,T+1):
+#     str1 = input()
+#     str2 = input()
+#     c_dict = {}
+#
+#     for a in str1:
+#         if a not in c_dict:
+#             c_dict[a] = 0
+#
+#     for a in str2:
+#         if a in c_dict:
+#            c_dict[a]+=1
+#
+#     result=max(c_dict.values())
+#     print(f'#{tc} {result}')
+#
 
 # ------------------------------------------
 # 13740 회문
-
 
 
 

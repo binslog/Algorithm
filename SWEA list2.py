@@ -29,7 +29,8 @@
 #     for row in arr:
 #         print(*row)
 
-#--------------------------------------------------------------
+# --------------------------------------------------------------
+
 # 13702 델타검색
 # for tc in range(1,11):
 #     N = int(input())
@@ -56,50 +57,86 @@
 #     print(f'#{tc} {result}')
 
 #------------------------------------------------------
+# 13700 이진탐색
+# T=int(input())
+# for tc in range(1,T+1):
+#     end,targetA,targetB=map(int,(input().split()))
+#     endA=end
+#     startA=0
+#     cntA=0
+#
+#     # A 이진탐색
+#     while startA<=endA:
+#         mid=(startA+endA)//2
+#         cntA += 1
+#         if mid == targetA:
+#             break
+#         elif mid < targetA:
+#             startA=mid
+#         else:
+#             endA=mid
+#
+#     # B 이진탐색
+#     endB=end
+#     startB=0
+#     cntB=0
+#     while startB<=endB:
+#         mid=(startB+endB)//2
+#         cntB += 1
+#         if mid == targetB:
+#             break
+#         elif mid < targetB:
+#             startB=mid
+#         else:
+#             endB=mid
+#
+#     if cntA>cntB:
+#         print(f'#{tc} B')
+#     elif cntA<cntB:
+#         print(f'#{tc} A')
+#     else:
+#         print(f'#{tc} 0')
 
-T=int(input())
+# ------------------------------------------------------------
+# 13699. 색칠하기
+T = int(input())
+
 for tc in range(1,T+1):
-    # 이진탐색
-    end,targetA,targetB=map(int,(input().split()))
-    endA=end
-    startA=0
-    cntA=0
+    N = int(input())
+    arr = [list(map(int,input().split())) for _ in range(N)]
+    arr2 = [[0]*10 for _ in range(10)]
 
-    # A 이진탐색
-    while startA<=endA:
-        mid=(startA+endA)//2
-        cntA += 1
-        if mid == targetA:
-            break
-        elif mid < targetA:
-            startA=mid
-        else:
-            endA=mid
 
-    # B 이진탐색
-    endB=end
-    startB=0
-    cntB=0
-    while startB<=endB:
-        mid=(startB+endB)//2
-        cntB += 1
-        if mid == targetB:
-            break
-        elif mid < targetB:
-            startB=mid
-        else:
-            endB=mid
+    for i in range(N):
+        if arr[i][4] == 1:
+            for k in range(arr[i][0],arr[i][2]+1):
+                for l in range(arr[i][1],arr[i][3]+1):
+                    arr2[k][l] = 1
 
-    if cntA>cntB:
-        print(f'#{tc} B')
-    elif cntA<cntB:
-        print(f'#{tc} A')
-    else:
-        print(f'#{tc} 0')
 
-#------------------------------------------------------------
-# 색칠하기
-N = int(input())
+    cnt=0
+    for i in range(N):
+        if arr[i][4] == 2:
+            for k in range(arr[i][0], arr[i][2] + 1):
+                for l in range(arr[i][1], arr[i][3] + 1):
+                    if arr2[k][l] == 1:
+                        cnt +=1
+
+    print(f'#{tc} {cnt}')
+
+
+
+
+
+
+
+# ------------------------------------------------------------
+# 1208. [S/W 문제해결 기본]1일차 - Flatten
+
+
+
+
+
 
 
 
