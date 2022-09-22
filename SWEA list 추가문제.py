@@ -32,6 +32,45 @@
 
 # ---------------------------------------------------------
 # 1979. 어디에 단어가 들어갈 수 있을까
+N,M = map(int,(input().split()))
+arr = [list(map(int,input().split())) for _ in range(N)]
+
+directy=[0,1]
+directx=[1,0]
+
+result = 0
+cnt=0
+for i in range(N):
+    for j in range(N):
+        dy = directy[0]
+        dx = directx[0]
+
+            cnt +=1
+
+        if cnt == M:
+            result += 1
+            break
+
+for j in range(N):
+    if cnt == M :
+        result +=1
+    cnt = 0
+    for i in range(N):
+        if arr[i][j] == 1:
+            cnt +=1
+
+print(result)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
