@@ -40,24 +40,45 @@
 #
 # for tc in range(1,T+1):
 #     N,M = map(int,(input().split()))
-#     pelin = [list(input()) for _ in range(N)]
+#     palin = [list(input()) for _ in range(N)]
 #
 #     flag=0
-#     result=[]
+#     # 가로 검색
 #     for i in range(N):
-#         if flag:
-#             flag=1
-#             break
-#         for j in range(M):
-#             if pelin[i][j] == pelin[i][M-j-1]:
-#                 flag=1
-#                 result.append(pelin[i][j])
-#             else:
-#                 flag=0
-#                 result=[]
-#                 break
+#         for j in range(N-M+1):
+#             for k in range(M):
+#                 if palin[i][j+k] == palin[i][N-k-1]:
+#                     flag=1
+#                 else:
+#                     flag = 0
+#                     break
+#         if flag == 1:
+#             result = palin[i][j:j+M]
 #
+#     # --------------------------------------------------
+#
+#
+#     palin_r = [[0] * N for _ in range(N)]
+#     for i in range(N):
+#         for j in range(N):
+#             palin_r[i][j] = palin[j][i]
+#
+#     # 세로 검색
+#     flag=0
+#     for i in range(N):
+#         for j in range(N-M+1):
+#             for k in range(M):
+#                 if palin_r[i][j+k] == palin_r[i][N-k-1]:
+#                     flag=1
+#                 else:
+#                     flag = 0
+#                     break
+#         if flag == 1:
+#             result = palin_r[i][j:j+M]
+#
+#     print(f'#{tc}',end=' ')
 #     print(*result,sep='')
+
 
 # -----------------------------------------------------------------
 # 13738 문자열 비교
@@ -76,6 +97,69 @@
 
 # ------------------------------------------------------
 # 1221 5일차-GNS
+# T=int(input())
+#
+# for tc in range(1,T+1):
+#     a = input().split()
+#     num=a[0]
+#     total=a[1]
+#
+#     numbers = list(input().split())
+#     orders = ["ZRO", "ONE", "TWO", "THR", "FOR", "FIV", "SIX", "SVN", "EGT", "NIN"]
+#     result=[]
+#
+#     for i in range(10):
+#         for j in range(len(numbers)):
+#             if orders[i] == numbers[j]:
+#                 result.append(numbers[j])
+#
+#     print(f'{num}')
+#     print(*result)
+
+
+# ---------------------------------------------------
+# 1216. [S/W 문제해결 기본] 3일차 - 회문2
+for tc in range(1,11):
+    palin = [list(input()) for _ in range(100)]
+    flag=0
+    result=[]
+    # 가로 검색
+    for i in range(100):
+        for j in range(100,0,-1):
+            for k in range(j):
+                if palin[i][k] == palin[i][99-k]:
+                    flag=1
+                else:
+                    flag=0
+                    break
+
+            if flag == 1:
+                result = palin[i][j:2*j]
+                break
+
+    # --------------------------------------------------
+
+
+    palin_r = [[0] * 100 for _ in range(100)]
+    for i in range(100):
+        for j in range(100):
+            palin_r[i][j] = palin[j][i]
+    #
+    # # 세로 검색
+    # flag=0
+    # for i in range(N):
+    #     for j in range(N-M+1):
+    #         for k in range(M):
+    #             if palin_r[i][j+k] == palin_r[i][N-k-1]:
+    #                 flag=1
+    #             else:
+    #                 flag = 0
+    #                 break
+    #     if flag == 1:
+    #         result = palin_r[i][j:j+M]
+    #
+    # print(f'#{tc}',end=' ')
+    print(*result,sep='')
 
 
 
@@ -88,5 +172,26 @@
 
 
 
+
+
+
+# ----------------------------------------------------------------------
+# 1210. [S/W 문제해결 기본] 2일차 - Ladder1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# -------------------------------------------------------------------------
 
 

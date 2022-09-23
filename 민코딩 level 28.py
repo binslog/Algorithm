@@ -1,4 +1,4 @@
-#1
+# 1
 # name = ["Amy","Edger","Bob","Diane","Chloe"]
 #
 # arr = [[0,1,0,0,0],
@@ -24,16 +24,13 @@
 #
 # print(name[maxindex])
 
-#-----------------------------------------------------------
-#2
+# -----------------------------------------------------------
+# 2
 num = int(input())
 arr = [list(map(int,input().split())) for _ in range(num)]
 
-
 boss_index = []
 under_index = []
-
-
 
 for j in range(num):
     for i in range(num):

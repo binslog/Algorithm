@@ -126,25 +126,32 @@
 
 # ------------------------------------------------------------
 # 1208. [S/W 문제 해결 기본]1일차 - Flatten
-
-N = int(input())
-numbers = list(map(int,input().split()))
-
-num=0
-while True: # 무한루프 ㄱㄱ
-    for number in numbers:
-        if number == max(numbers): # max 찾아서 -1 해줄거야
-            number -= 1
-        if number == min(numbers): # min 찾아서 +1 해줄거야
-            number += 1
-
-    N -= 1 # 조작 다했으면 N 빼주고
-    if N == 0 : # N ==0 이 되면 끝낼거야.
-        num+=1 # 출력을 위한 num값!
-        break
-
-result = max(numbers) - min(numbers) # max와 min을 구한다.
-print(f'#{num} {result}')
+# for tc in range(1,11):
+#
+#     N = int(input())
+#     numbers = list(map(int,input().split()))
+#
+#     bucket = [0]*101 # bucket 만들고
+#     for i in range(len(numbers)):
+#         bucket[numbers[i]] +=1
+#
+#     while N:
+#         if bucket[0] != 0 and bucket[-1] != 0:
+#             bucket[-1] -=1
+#             bucket[-2] +=1
+#             bucket[0] -= 1
+#             bucket[1] +=1
+#             N -= 1
+#
+#         if bucket[0] == 0:
+#             bucket = bucket[1:]
+#         if bucket[-1] == 0:
+#             bucket = bucket[0:-1]
+#
+#
+#
+#     result = len(bucket)-1
+#     print(f'#{tc} {result}')
 
 
 
