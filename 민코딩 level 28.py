@@ -51,7 +51,7 @@
 # print(f"under:{under_result}")
 
 # ------------------------------------------------------------------------
-# # 3
+# 3
 # arr = [[0,1,1,0,0,0,0,1],
 #        [0,0,0,0,0,0,0,0],
 #        [0,0,0,1,1,0,1,0],
@@ -61,12 +61,16 @@
 #        [0,0,0,0,0,0,0,0],
 #        [0,0,0,0,0,0,0,0]]
 #
-#
+# flag = 0
 # def dfs(now):
+#     global flag
 #     for i in range(8):
 #         if arr[i][now] == 1:
 #             y=i
-#         else: return 1
+#             break
+#         else:
+#             y=0
+#             flag=1
 #
 #     result=[]
 #     for j in range(8):
@@ -83,7 +87,8 @@
 #         now=i
 #
 # result=dfs(now)
-# if result==1:
+#
+# if flag:
 #     print("없음")
 # else:
 #     print(*result)
@@ -94,6 +99,8 @@
 # arr=[list(map(int,input().split())) for _ in range(n)]
 #
 # name = [x for x in range(n)] # 받은 숫자로 숫자배열 하나 생성!
+
+
 #
 # answer=[]
 # def dfs(now):
@@ -138,7 +145,6 @@
 #     answer.append(name[now])
 #     for i in range(8):
 #         if arr[now][i]==1:
-#
 #             dfs(i)
 #
 #
