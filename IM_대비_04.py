@@ -35,7 +35,27 @@
 #     print(*result)
 
 # ----------------------------------------------------------------
+# 1204 .[S/W 문제해결 기본] 1일차 - 최빈수 구하기
+#
+# T=int(input())
+#
+# for tc in range(1,1+T):
+#     num=int(input())
+#     scores = list(map(int,input().split()))
+#     bucket = [0]*1001
+#     result=0
+#
+#     for i in range(len(scores)):
+#         bucket[scores[i]] +=1 # DAT 만들어주고,
+#
+#     for i in range(len(bucket)):
+#         if bucket[i] == max(bucket):
+#             result=i
+#
+#
+#     print(f'#{num} {result}')
 
+# ----------------------------------------------------------------
 # 12712. 파리퇴치3
 
 # T=int(input())
@@ -91,26 +111,36 @@
 
 # 1954. 달팽이 숫자
 
-# n=int(input())
-# arr=[[0]*n for _ in range(n)]
+# T=int(input())
+# for tc in range(1,1+T):
+#     n=int(input())
+#     arr=[[0]*n for _ in range(n)]
 #
-# directy = [0,1,0,-1]
-# directx = [1,0,-1,0]
+#     directy = [0,1,0,-1]
+#     directx = [1,0,-1,0]
 #
-# dy,dx=0,0
+#     dy,dx=0,0
+#     dir=0
+#
+#     for i in range(1,n*n+1):
+#         arr[dy][dx] += i
+#         dy += directy[dir]
+#         dx += directx[dir]
+#
+#         if 0>dy or dy>=n or dx<0 or dx>=n or arr[dy][dx]!=0 :
+#             dy-=directy[dir]
+#             dx-=directx[dir]
+#
+#             dir = (dir+1)%4
+#
+#             dy+=directy[dir]
+#             dx+=directx[dir]
 #
 #
-# for i in range(4):
-#     for j in range(1, n * n + 1):
-#         if dy>=n or dy<0 or dx>=n or dx<0 : continue
-#         if arr[dy][dx] != 0: continue
-#         arr[dy][dx]+=j
-#         dy += directy[i]
-#         dx += directx[i]
-
-# print(arr)
-
-
+#     print(f'#{tc}')
+#     for row in arr:
+#         print(*row)
+#
 
 # ----------------------------------------------------------------
 # 11315. 오목판정

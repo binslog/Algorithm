@@ -139,23 +139,23 @@
 
 # -----------------------------------------------------------
 # 7
-words=input()
-cnt=0
-check=[]
-def abc(level):
-    global cnt,check
-    if level == 4:
-        cnt+= 1
-        return
-
-    for word in words:
-        if level == 0 or abs(int(check[level-1]) - int(word)) <= 3:
-            check.append(word)
-            abc(level+1)
-            check.pop()
-abc(0)
-print(cnt)
-
+# words=input()
+# cnt=0
+# check=[]
+# def abc(level):
+#     global cnt,check
+#     if level == 4:
+#         cnt+= 1
+#         return
+#
+#     for word in words:
+#         if level == 0 or abs(int(check[level-1]) - int(word)) <= 3:
+#             check.append(word)
+#             abc(level+1)
+#             check.pop()
+# abc(0)
+# print(cnt)
+#
 
 
 
