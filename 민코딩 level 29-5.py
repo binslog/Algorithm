@@ -15,6 +15,25 @@
 # dfs(n)
 # print("시작")
 
+# arr = ['시작',3,1,2,1,3,2,1,2,1,'도착']
+#
+# def dfs(now):
+#     if now == len(arr)-1:
+#         print(arr[now],end=' ')
+#         return
+#
+#     print(arr[now],end=' ')
+#     if now == 0:
+#         dfs(n)
+#     else:
+#         dfs(now+arr[now])
+#     print(arr[now],end=' ')
+#
+# n=int(input())
+# dfs(0)
+
+
+
 # ------------------------------------------
 # 2
 # evid = [-1,0,0,1,2,4,4]
@@ -61,58 +80,80 @@
 # ---------------------------------------------
 # 5
 # arr = [list(map(int,input().split())) for _ in range(4)]
-# visited = [list(map(int,input().split())) for _ in range(4)]
-# y1,x1=0,0
-# y2,x2=0,0
 #
-# dy=[-1,1,0,0]
-# dx=[0,0,-1,1]
-#
-# ny,nx=0,0
+# # 아래쪽, 오른쪽
+# dy=[1,0]
+# dx=[0,1]
 #
 # def find_1(y,x):
-#     global ny,nx
-#     for i in range(4):
-#         y+= dy[i]
-#         x+= dx[i]
-#         if y<0 or y>4 or x<0 or y>4: continue
-#         if arr[y][x] == 0 : continue
-#         if arr[y][x] ==1 and visited[y][x]==0:
-#             visited[ny][nx]=1
-#             continue
-#         if ny
+#     dir=0
+#     while True:
+#         y+= dy[dir]
+#         x+= dx[dir]
+#         if y<0 or y>4 or x<0 or y>4 or arr[y][x] == 0:
+#             y -= dy[dir]
+#             x -= dx[dir]
+#             dir = (dir+1)%2
+#
+#         elif x==4 : break
+#         elif arr[y+dy[0]][x+dx[0]]==0 and arr[y+dy[1]][x+dx[1]] ==0: break
+#
+#     return y,x
 #
 #
 #
+# y1,x1=0,0
+# y2,x2=0,0
+# flag=0
 # for i in range(4):
+#     if flag:
+#         break
 #     for j in range(5):
 #         if arr[i][j] == 1:
-#             visited[i][j] =1
-#             y1,x1=i,j
-#             ret=find_1(i,j)
-#
-# print('(%d,%d)' % (y1,x1))
-# print('(%d,%d)' % (y2,x1))
+#             flag=1
+#             y1,x1 = i,j
+#             y2,x2 = find_1(y1, x1)
+#             print('(%d,%d)' % (y1, x1))
+#             print('(%d,%d)' % (y2, x2))
+#             break
+
 
 # -------------------------------------------------------
 # 6
 # arr = [[3,2,5,3],[7,6,1,6],[4,9,2,7]]
 # rot = list(map(int,input().split()))
+# result=[[0]*4 for _ in range(3)]
 #
-# for i in range(3):
-#     num=rot[i]%3
-#     ni=0
-#     for j in range(4):
-#         ni+=i+num
-#         arr[j][i]=arr[j][ni]
+# for i in range(4):
+#     if rot[i] % 3 == 1:
+#         result[1][i] = arr[0][i]
+#         result[2][i] = arr[1][i]
+#         result[0][i] = arr[2][i]
 #
-# print(*arr,sep='')
+#     elif rot[i] % 3 == 2:
+#         result[2][i] = arr[0][i]
+#         result[1][i] = arr[2][i]
+#         result[0][i] = arr[1][i]
+#     else:
+#         result[i]=arr[i]
+#
+#
+# for row in result:
+#     print(*row,sep='')
 
 # --------------------------------------------------------
 # 7
-# a,b = map(int,input().split())
-# swam = [0,0,0,0,0]
-
+# idx,life = map(int,input().split())
+# road = [["_"]*5 for _ in range(life+1)]
+#
+# for i in range(life,0,-1):
+#     for j in range(5):
+#         if j-life == life:
+#             road[life-i][life]=i
+#             break
+#
+#
+# print(*road)
 
 
 # -----------------------------------------------------
@@ -124,25 +165,18 @@
 
 # ------------------------------------------------------------
 # 9
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# word1=list(input())
+# word2=list(input())
+#
+# for i in range(len(word2),0,-1):
+#     for j in range(len(word1)-i+1):
+#         if word1[j:j+i] in word2:
+#             print(word1[j:j+i])
+#             debug=1
+#             break
+#
+# #
+#
 
 
 
