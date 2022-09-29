@@ -32,9 +32,8 @@
 # n=int(input())
 # dfs(0)
 
-
-
 # ------------------------------------------
+
 # 2
 # evid = [-1,0,0,1,2,4,4]
 # times = [8,3,5,6,8,9,10]
@@ -149,17 +148,36 @@
 # for i in range(life,0,-1):
 #     for j in range(5):
 #         if j-life == life:
-#             road[life-i][life]=i
+#             road[life-i][j-i]=i
 #             break
 #
-#
-# print(*road)
+# for row in road:
+#     print(*row,sep='')
 
 
 # -----------------------------------------------------
 # 8
-
-
+# MAP=[list(map(int,input().split())) for _ in range(4)]
+#
+# directy = [0,1,0,-1,0]
+# directx = [1,0,-1,0,1]
+#
+# def monster(y,x):
+#     for i in range(5):
+#         y+=directy[i]
+#         x+=directx[i]
+#         if y<0 or y>=4 or x<0 or x>=3 or MAP[y][x] =="#":
+#             y -= directy[i]
+#             x -= directy[i]
+#         MAP[dy][dx] = MAP[dy][dx]
+#
+#
+#
+# for i in range(4):
+#     for j in range(3):
+#         if MAP[i][j] != "#"or MAP[i][j] != "_":
+#             monster(i,j)
+#
 
 
 
@@ -170,10 +188,10 @@
 #
 # for i in range(len(word2),0,-1):
 #     for j in range(len(word1)-i+1):
-#         if word1[j:j+i] in word2:
-#             print(word1[j:j+i])
-#             debug=1
+#         if word1[j:j+i+1] == word2[0:i+1]:
+#             print(word2[0:i+1])
 #             break
+
 #
 # #
 #
