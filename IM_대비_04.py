@@ -201,6 +201,39 @@
 
 
 
+#-----------------
+# 6190. 정곤이의 단조 증가하는 수
+
+# T=int(input())
+#
+# for tc in range(1,1+T):
+#     n=int(input())
+#     numbers=list(map(int,input().split()))
+#
+#     X=0 # 곱한 값
+#     flag=0
+#
+#     result=[]
+#     for i in range(n):
+#         for j in range(i+1,n):
+#             X=list(str(numbers[i]*numbers[j]))
+#             Y=int(numbers[i]*numbers[j])
+#
+#
+#             for k in range(len(X)-1):
+#                 if X[k] > X[k+1]:
+#                     flag=0
+#                     break
+#                 else: flag=1
+#
+#             if flag:
+#                 result.append(Y)
+#
+#
+#     if len(result)==0:
+#         print(f'#{tc} -1')
+#     else:
+#         print(f'#{tc} {max(result)}')
 
 
 

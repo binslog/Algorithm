@@ -3,48 +3,48 @@
 #
 # for tc in range(1,1+T):
 #     v,e = map(int,input().split())
-#     arr = [list(map(int,input().split())) for _ in range(e)]
-#     st,ed= map(int,input().split())
-#
-#     arr2=[[0]*50 for _ in range(1000)]
-#
-#     for i in range(e):
-#         arr2[arr[i][0]][arr[i][1]]=1
-#
+#     arr = [[] for _ in range(v + 1)]
+#     for _ in range(e):
+#         st, ed = map(int,input().split())
+#         arr[st].append(ed)
+#     start,end= map(int,input().split())
 #     result=0
+#     used=[0]*v+1
+#
 #     def dfs(now):
 #         global result
-#         if now == ed:
+#         if now == end:
 #             result=1
 #             return
 #
-#         for i in range(7):
-#             if arr2[now][i] == 1:
-#                 # arr[now]=0
-#                 dfs(i)
+#         for i in range(len(arr[now])):
 #
-#     dfs(st)
+#                 dfs(arr[now][i])
+#
+#     dfs(start)
 #     print(f'#{tc} {result}')
+# #
+#
 
 # --------------------------------------------------
 # 13794 . 반복문자 지우기
 
-word=list(input())
 
-while 1:
-    for i in range(len(word)-1):
-        if word[i] == word[i+1]:
-            del word[i]
-            word=
-
-        if len(set(word)) ==len(word):
-            break
-
-print(word)
 
 # ---------------------------------------------------
 
 # 13792. 종이붙이기
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -79,4 +79,8 @@ print(word)
 #
 #
 #     print(f'#{tc} {result}')
+#
 
+# 델타배열
+# dfs
+# 최소신장트리, 크루스칼 알고리즘

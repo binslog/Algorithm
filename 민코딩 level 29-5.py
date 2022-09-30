@@ -140,6 +140,7 @@
 # for row in result:
 #     print(*row,sep='')
 
+
 # --------------------------------------------------------
 # 7
 # idx,life = map(int,input().split())
@@ -157,28 +158,32 @@
 
 # -----------------------------------------------------
 # 8
-# MAP=[list(map(int,input().split())) for _ in range(4)]
+# MAP=[list(input().split()) for _ in range(4)]
 #
 # directy = [0,1,0,-1,0]
 # directx = [1,0,-1,0,1]
 #
+# ny,nx,dir=0,0,0
 # def monster(y,x):
-#     for i in range(5):
-#         y+=directy[i]
-#         x+=directx[i]
-#         if y<0 or y>=4 or x<0 or x>=3 or MAP[y][x] =="#":
-#             y -= directy[i]
-#             x -= directy[i]
-#         MAP[dy][dx] = MAP[dy][dx]
+#     global ny,nx,dir
+#     while dir !=5:
+#         y += directy[dir]
+#         x += directx[dir]
+#         if y<0 or y>=4 or x<0 or x>=3 or MAP[y][x] =="#" or MAP[y][x]!="_":
+#             y -= directy[dir]
+#             x -= directx[dir]
+#             dir +=1
+#         else:
+#             dir +=1
 #
-#
+#     MAP[ny][nx]=MAP[y][x]
 #
 # for i in range(4):
 #     for j in range(3):
-#         if MAP[i][j] != "#"or MAP[i][j] != "_":
+#         if MAP[i][j] != "#" or MAP[i][j] != "_":
 #             monster(i,j)
 #
-
+# print(MAP)
 
 
 # ------------------------------------------------------------
@@ -186,16 +191,28 @@
 # word1=list(input())
 # word2=list(input())
 #
-# for i in range(len(word2),0,-1):
-#     for j in range(len(word1)-i+1):
-#         if word1[j:j+i+1] == word2[0:i+1]:
-#             print(word2[0:i+1])
-#             break
-
+# lst1=[]
+# for i in range(len(word1)):
+#     for j in range(i+1,len(word1)):
+#         lst1.append(word1[i:j+1])
 #
-# #
+# lst2=[]
+# for i in range(len(word2)):
+#     for j in range(i+1,len(word2)):
+#         lst2.append(word2[i:j+1])
 #
-
-
-
-
+# result=[]
+# for i in range(len(lst1)):
+#     for j in range(len(lst2)):
+#         if lst1[i] == lst2[j] :
+#             result.append(lst2[j])
+#
+#
+# Max=-21e8
+# idx=0
+# for i in range(len(result)):
+#     if len(result[i]) >Max:
+#         Max=len(result[i])
+#         idx=i
+#
+# print(*result[idx],sep='')
