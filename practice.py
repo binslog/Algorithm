@@ -1,36 +1,22 @@
 from collections import deque
 
 def solution(cards1, cards2, goal):
-    deq1 = deque ()
-    deq2 = deque ()
-    
-    # queue로 자료형태 바꾼다. 
-    for card1 in cards1:
-        deq1.append(card1)
-    print(deq1)
-    
-    for card2 in cards2:
-        deq2.append(card2)
-    print(deq2)
+    cards1 = deque (cards1)
+    cards2 = deque (cards2)
     
     for word in goal:
-        if word in deq1:
-            deq1.popleft()
-            break
+        if cards1 and word == cards1[0]: cards1.popleft()
+        if cards2 and word == cards2[0]: cards2.popleft()
         
-        elif word in deq2:
-            deq2.popleft()
-            break
-            
-        elif len(deq1) == 0 or len(deq2) == 0 : return "Yes"
-        
-        else: return "No"
+        else: return 'No'
 
+    return 'Yes'
 
-
-card1 = ["i", "drink", "water"]
-card2 = ["want", "to"]
+cards1 = ["i", "drink", "water"]
+cards2 = ["want", "to"]
 goal = ["i", "want", "to", "drink", "water"]
 
-answer = solution(card1, card2, goal)
+answer = solution(cards1, cards2, goal)
 print(answer)
+
+asd
