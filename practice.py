@@ -1,22 +1,35 @@
-from collections import deque
 
-def solution(cards1, cards2, goal):
-    cards1 = deque (cards1)
-    cards2 = deque (cards2)
+
+def solution(s, skip, index):
+    result = []
+
+    for word in list(s) :
+        word_cnt = ord(word)
+
+        for i in range(1,index+1):            
+            if word_cnt >= 122 : 
+                word_cnt -= 26
+
+            if chr(word_cnt+i) in list(skip) : 
+                word_cnt += 1
+
+        word_cnt += index
+                            
+        if word_cnt >= 122 : 
+            word_cnt -= 26
+            
+        result.append(chr(word_cnt))
+            
+            
+    # print(result)
+
+    answer = ''.join(s for s in result)
     
-    for word in goal:
-        if cards1 and word == cards1[0]: cards1.popleft()
-        if cards2 and word == cards2[0]: cards2.popleft()
-        
-        else: return 'No'
+    return answer
 
-    return 'Yes'
+s = 'zzxas'
+skip = 'wbqd'
+index = 5
 
-cards1 = ["i", "drink", "water"]
-cards2 = ["want", "to"]
-goal = ["i", "want", "to", "drink", "water"]
-
-answer = solution(cards1, cards2, goal)
-print(answer)
-
-asd
+res = solution(s,skip,index)
+print(res)

@@ -1,35 +1,22 @@
+def solution (s,skip,index):
+    answer =""
+    idx=0
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
 
+    for ch1 in skip:
+        if ch1 in alphabet:
+            alphabet = alphabet.replace(ch1,"")
+    print(alphabet)
 
-def solution(s, skip, index):
-    result = []
+    for ch2 in s :
+        idx = (alphabet.index(ch2) + index) % len(alphabet)
 
-    for word in list(s) :
-        word_cnt = ord(word)
+        print(alphabet.index(ch2), idx)
 
-        for i in range(1,index+1):            
-            if word_cnt >= 122 : 
-                word_cnt -= 26
+        answer += alphabet[idx]
 
-            if chr(word_cnt+i) in list(skip) : 
-                word_cnt += 1
-
-        word_cnt += index
-                            
-        if word_cnt >= 122 : 
-            word_cnt -= 26
-            
-        result.append(chr(word_cnt))
-            
-            
-    # print(result)
-
-    answer = ''.join(s for s in result)
-    
     return answer
 
-s = 'zzxas'
-skip = 'wbqd'
-index = 5
-
+s,skip,index = 'aukks','wbqd',5
 res = solution(s,skip,index)
 print(res)
